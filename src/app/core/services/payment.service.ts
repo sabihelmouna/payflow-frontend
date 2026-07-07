@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../models/auth.model';
 import { PaymentRequest, PaymentResponse, WalletResponse } from '../models/payment.model';
-
+import { environment } from '../../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class PaymentService {
-  private apiUrl = 'http://localhost:8080/api';
+  private apiUrl = `${environment.apiUrl}/payments`;
 
   constructor(private http: HttpClient) {}
 
